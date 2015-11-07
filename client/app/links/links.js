@@ -14,4 +14,10 @@ angular.module('shortly.links', [])
       $location.url('/signin');
     }
   }
+})
+.directive('shortenedlink', function() {
+  return {
+    templateUrl: 'app/links/shortenedlink.html'
+    // template: 'test'
+  }
 });
