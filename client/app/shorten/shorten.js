@@ -12,8 +12,8 @@ angular.module('shortly.shorten', [])
       .then(function(result) {
         $scope.added = result;
         $scope.waiting = false;
+        $scope.urlText = '';
       });
-      $scope.urlText = '';
     }
   }
 });

@@ -3,17 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <title>Shortly</title>
+   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc1/angular-material.min.css"> 
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
   </head>
-  <body>
+  <body layout="column">
+    <md-toolbar layout="row">
+    <div class="md-toolbar-tools">
     <h1>Shortly</h1>
-    <div class='navigation'>
-      <ul>
-        <li><a href='/#/' class='index'>All Links</a></li>
-        <li><a href='/#/shorten' class='create'>Shorten</a></li>
-        <li><a href='/#/signout' class='logout'>Logout</a></li>
-      </ul>
+      <md-button class="" href="/#/" style="line-height:52px;">All Links</md-button>
+      <md-button class="" href="/#/shorten" style="line-height:52px;">Shorten</md-button>
+      <md-button class="" href="/#/signout" style="line-height:52px;">Logout</md-button>
     </div>
+    </md-toolbar>
     <div id='container'></div>
 
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
@@ -21,7 +22,11 @@
 
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
-
+    <script src="lib/angular-animate/angular-animate.js"></script>
+    <script src="lib/angular-aria/angular-aria.js"></script>
+    <script src="lib/angular-material/angular-material.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+    <script src="lib/ngFx/dist/ngFx.js"></script>
     <script src="app/auth/auth.js"></script>
     <script src="app/links/links.js"></script>
     <script src="app/shorten/shorten.js"></script>
