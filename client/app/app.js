@@ -15,6 +15,10 @@ angular.module('shortly', [
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
     })
+    .when('/signout', {
+      templateUrl: 'app/auth/signin.html',  // do not touch
+      controller: 'AuthController'
+    })
     .when('/shorten', {
       templateUrl: '/app/shorten/shorten.html',
       controller: 'ShortenController'
@@ -22,7 +26,6 @@ angular.module('shortly', [
     .otherwise({
       templateUrl: '/app/links/links.html',
       controller: 'LinksController'
-      // redirectTo: '/test'
     })
 
     // Your code here

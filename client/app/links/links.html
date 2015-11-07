@@ -1,5 +1,6 @@
 <div id='container'>
- <div ng-repeat="link in data" class='link'>
+ <input ng-model="searchbox">
+ <div ng-repeat="link in data | filter:searchbox | orderBy:'-visits'" class='link'>
    <img src="/assets/redirect_icon.png">
    <div class="info">
      <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>

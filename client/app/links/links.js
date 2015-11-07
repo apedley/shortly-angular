@@ -1,14 +1,17 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, $window, $location, Links) {
+.controller('LinksController', function ($scope, $window, $location, Links, Auth) { 
   var path = $location.path();
-  if (path && path !== '/') {
+  if (path && path !== '/' && path !== '/links') {
     $window.location.href = '/api/links' + path;
   } else {
-
-    Links.fetch()
-    .then(function(data) {
-      $scope.data = data;
-    });
+    if (Auth.isAuth()) {
+      Links.fetch()
+      .then(function(data) {
+        $scope.data = data;
+      });
+    } else {
+      $location.url('/signin');
+    }
   }
 });

@@ -5,6 +5,12 @@ angular.module('shortly.auth', [])
 
 .controller('AuthController', function ($scope, $window, $location, Auth) {
   $scope.user = {};
+  if ($location.path() === '/signout') {
+    Auth.signout();
+  }
+  $scope.formNotFilledOut = function() {
+    return ($scope.user.username.length < 3 || $scope.user.username.length > 32 || $scope.user.password.length < 3 || $scope.user.password.length > 32);
+  }
 
   $scope.signin = function () {
     Auth.signin($scope.user)
@@ -27,4 +33,5 @@ angular.module('shortly.auth', [])
         console.error(error);
       });
   };
+  
 });
