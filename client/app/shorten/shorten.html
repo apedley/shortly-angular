@@ -1,7 +1,7 @@
 <div id='container'>
   <form name="linkForm">
     <input class='text' type='url' name='url' ng-model='urlText' required>
-    <input type='submit' value='Shorten' ng-click='submit()'>
+    <input type='submit' value='Shorten' ng-click='submit()' id='submitbutton'>
   </form>
   <img class='spinner' src='/assets/spiffygif_46x46.gif' ng-show='waiting'>
   <div class='message'>

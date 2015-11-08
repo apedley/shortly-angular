@@ -6,30 +6,39 @@ angular.module('shortly', [
   'ngRoute',
   'ngAnimate',
   'ngFx',
-  'ngMaterial'
+  'ngMaterial',
+  'ui.router'
 ])
-.config(function($routeProvider, $httpProvider) {
-  $routeProvider
-    .when('/signin', {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+ $urlRouterProvider.otherwise('/');
+
+  $stateProvider
+    .state('signin', {
+      url: '/signin',
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
     })
-    .when('/signup', {
+    .state('signup', {
+      url: '/signup',
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
     })
-    .when('/signout', {
+    .state('signout', {
+      url: '/signout',
       templateUrl: 'app/auth/signin.html',  // do not touch
       controller: 'AuthController'
     })
-    .when('/shorten', {
+    .state('shorten', {
+      url: '/shorten',
       templateUrl: '/app/shorten/shorten.html',
       controller: 'ShortenController'
     })
-    .otherwise({
+    .state('links', {
+      url: '/',
       templateUrl: '/app/links/links.html',
       controller: 'LinksController'
-    })
+    });
+
 
     // Your code here
 
